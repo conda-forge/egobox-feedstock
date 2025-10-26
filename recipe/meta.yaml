@@ -12,9 +12,11 @@ source:
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
   script:
+    - set PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1  # [win and py==314]
+    - export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1  # [unix and py==314]
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
