@@ -1,5 +1,5 @@
 {% set name = "egobox" %}
-{% set version = "0.25.0" %}
+{% set version = "0.34.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 239c0993c0d036259e391023899faac64bbe3846048c1cdb5da432aa85bced40
+  sha256: 18b4589d74a0f2b3aa954c123dc9bd02166bb975ca0d5c272009343647ef694c
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
@@ -16,7 +16,7 @@ build:
     - export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1  # [unix and py==314]
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
