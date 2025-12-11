@@ -34,6 +34,7 @@ requirements:
     - pip
   run:
     - python
+    - numpy
 
 test:
   imports:
