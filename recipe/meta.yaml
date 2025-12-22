@@ -1,5 +1,5 @@
 {% set name = "egobox" %}
-{% set version = "0.34.0" %}
+{% set version = "0.34.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 18b4589d74a0f2b3aa954c123dc9bd02166bb975ca0d5c272009343647ef694c
+  sha256: 25e05ef87b07b83e3b6e692925b5cf974a745ec0cdc9c4c8facd18b776716884
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
