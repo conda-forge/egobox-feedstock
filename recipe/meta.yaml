@@ -1,5 +1,5 @@
 {% set name = "egobox" %}
-{% set version = "0.37.8" %}
+{% set version = "0.37.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bb9e44601bf22aa42a7edae6ad967996500c889ef5b0277a73517be30860c218
+  sha256: ec7a9c81b7552e20a7f1fc76ab8b60ecce7bdc23370857b4c662a5017fd7ef6d
 
 build:
   skip: true  # [py<38 or python_impl == 'pypy']
@@ -16,7 +16,7 @@ build:
     - export PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1  # [unix and py==314]
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
